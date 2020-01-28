@@ -16,6 +16,9 @@ server.post('/projects', (req, res) => {
   return res.send(projectsBD);
 });
 
+/**
+ * 
+ */
 server.put('/projects/:id', (req, res) => {
   const { id } = req.params;
   const { title } = req.body;
