@@ -1,5 +1,4 @@
 const express = require('express');
-
 const server = express();
 
 server.use(express.json());
@@ -11,8 +10,6 @@ const projectsBD = [];
  */
 function projectFind(req, res, next) {
   if (!projectsBD.find(project => project.id === req.params.id)) {
-
-    console.log('AQUI');
     return res.status(400).json({ error: 'Project not found' });
   }
   next();
@@ -31,7 +28,6 @@ server.get('/projects', printLogCount, (req, res) => {
 });
 
 server.get('/projects/:id', printLogCount, projectFind, (req, res) => {
-  console.log(req.params.id);
   return res.json(projectsBD.find(project => project.id === req.params.id));
 });
 
@@ -44,7 +40,6 @@ server.post('/projects', printLogCount, (req, res) => {
 server.post('/projects/:id/tasks', printLogCount, projectFind, (req, res) => {
   const { id } = req.params;
   const { title } = req.body;
-
   const project = projectsBD.find(project => project.id === id);
 
   project.tasks.push(title);
@@ -68,7 +63,6 @@ server.put('/projects/:id', printLogCount, projectFind, (req, res) => {
 server.delete('/projects/:id', printLogCount, projectFind, (req, res) => {
 
   const { id } = req.params;
-
   const projectIndex = projectsBD.findIndex(project => project.id === id);
 
   if (projectIndex !== -1) {
@@ -78,6 +72,7 @@ server.delete('/projects/:id', printLogCount, projectFind, (req, res) => {
   return res.send(projectsBD);
 })
 
-
-
+/**
+ * Open listen server
+ */
 server.listen(3000);
