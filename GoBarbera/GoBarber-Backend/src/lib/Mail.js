@@ -29,7 +29,7 @@ class Mail {
           defaultLayout: 'default',
         }),
         viewPath,
-        extName: '.hbs',
+        extName: '.handlebars',
       })
     );
   }
