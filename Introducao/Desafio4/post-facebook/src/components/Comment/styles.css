@@ -1,0 +1,11 @@
+.comment-item {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+img.comment-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}

@@ -1,16 +1,33 @@
 header#main-header {
   height: 60px;
   background: #4a90e2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
-a {
-  height: 60px;
-  width: 100%;
-  background: #da552f;
-  font-size: 18px;
-  font-weight: bold;
-  color: #fff;
-  display: flex;
-  justify-content: center;
+div.div-header-logo {
+  color: white;
+}
+
+div.div-header-perfil {
   align-items: center;
+  display: flex;
+  color: white;
+  font-size: 12px;
+}
+
+h3.h3-meu-perfil {
+  margin-right: 10px;
+}
+
+.header-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.header-icon:hover {
+  cursor: pointer;
 }
