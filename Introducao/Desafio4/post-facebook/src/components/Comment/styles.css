@@ -2,10 +2,24 @@
   list-style: none;
   display: flex;
   flex-direction: row;
+  margin-top: 14px;
 }
 
 img.comment-img {
   width: 28px;
   height: 28px;
   border-radius: 50%;
+  margin-left: 2px;
+  margin-top: 2px;
+  margin-right: 10px;
+}
+
+.comment-item strong {
+  margin-right: 10px;
+}
+
+.comment-item p {
+  background-color: #eeeeee;
+  border-radius: 20px;
+  padding: 14px;
 }

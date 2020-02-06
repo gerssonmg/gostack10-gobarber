@@ -14,7 +14,8 @@ export default function PostList() {
       url_avatar: 'https://avatars2.githubusercontent.com/u/12429717?v=4',
       name: 'Gérson Crisóstomo Á. Filho',
       date: '04 Jun 2019',
-      content: `Fala galera, beleza?
+      line01: `Fala galera, beleza?`,
+      content: `
       Estou fazendo o Bootcamp GoStack da Rocketseat e está sendo muito massa! Alguém mais ai fazendo,
       comenta na publicação para trocarmos uma ideia.
       `,
