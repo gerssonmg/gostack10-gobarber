@@ -6,10 +6,10 @@ import PostList from './components/PostList';
 
 function App() {
   return (
-    <>
-      <Header />
-      <PostList />
-    </>
+    <div id="app">
+      <Header id="header" />
+      <PostList id="postlist" />
+    </div>
   );
 }
 
