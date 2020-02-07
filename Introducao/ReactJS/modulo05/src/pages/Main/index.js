@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { FaGithubAlt, FaPlus, FaSpinner } from 'react-icons/fa';
-import { Container, Form, SubmitButton } from './styles';
+import { Form, SubmitButton, List } from './styles';
+import Container from '../../components/Container';
 import api from '../../services/api';
 
 export default function Main() {
   const [newRepo, setNewrepo] = useState('rocketseat/unform');
   const [resAxios, setResaxios] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    function reqLocal() {
+      if (localStorage.getItem('resAxios')) {
+        setResaxios(JSON.parse(localStorage.getItem('resAxios')));
+      }
+    }
+    reqLocal();
+  }, []);
 
   function handleInputChange(e) {
     setNewrepo(e);
@@ -17,7 +28,8 @@ export default function Main() {
     setLoading(true);
 
     const response = await api.get(`/repos/${newRepo}`);
-    setResaxios([...resAxios, response.data.full_name]);
+    await setResaxios([...resAxios, response.data]);
+    localStorage.setItem('resAxios', JSON.stringify(resAxios));
     console.log(resAxios);
     setLoading(false);
   }
@@ -43,7 +55,18 @@ export default function Main() {
             )}
         </SubmitButton>
       </Form>
-      {resAxios}
+
+      <List>
+        {resAxios.map(repo => (
+          <li key={Math.random(1) * 100}>
+            <span>{repo.full_name}</span>
+
+            <Link to={`/repository/${encodeURIComponent(repo.full_name)}`}>
+              Detalhes
+            </Link>
+          </li>
+        ))}
+      </List>
     </Container>
   );
 }
