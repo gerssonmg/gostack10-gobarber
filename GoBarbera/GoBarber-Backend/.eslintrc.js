@@ -26,4 +26,5 @@ module.exports = {
   },
 };
 
+//yarn eslint --init
 //yarn eslint --fix src --ext .js

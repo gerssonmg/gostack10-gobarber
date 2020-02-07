@@ -6,6 +6,6 @@ export async function saveComment(_, { input }) {
 }
 
 export async function getComments() {
-  const comments = await Comment.create();
+  const comments = await Comment.find();
   return comments;
 }
