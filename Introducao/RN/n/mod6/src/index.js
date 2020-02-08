@@ -1,19 +1,12 @@
 import React from 'react';
-import {
+import { StyleSheet, Text } from 'react-native';
 
-  StyleSheet,
-  Text,
-
-} from 'react-native';
-
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default function App() {
   return (
     <>
-      <Text>88</Text>
+      <Text>444444</Text>
     </>
   );
 }
