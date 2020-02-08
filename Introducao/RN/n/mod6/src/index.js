@@ -4,5 +4,5 @@ import { Text } from 'react-native';
 import './config/ReactotronConfig';
 
 export default function App() {
-  return <Text>444444</Text>;
+  return <Text>24</Text>;
 }
