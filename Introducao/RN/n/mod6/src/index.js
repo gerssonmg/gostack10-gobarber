@@ -13,7 +13,7 @@ import {
 export default function App() {
   return (
     <>
-      <Text>55</Text>
+      <Text>88</Text>
     </>
   );
 }
