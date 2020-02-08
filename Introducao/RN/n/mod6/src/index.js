@@ -19,7 +19,7 @@ import {
 export default function App() {
   return (
     <>
-      <Text>iiiiii</Text>
+      <Text>OOOOOOOOO</Text>
     </>
   );
 }
