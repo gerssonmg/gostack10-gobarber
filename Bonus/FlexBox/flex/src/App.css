@@ -1,11 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
 #app {
   flex: 1;
   display: flex;
-  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .box {
