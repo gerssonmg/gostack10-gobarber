@@ -12,12 +12,13 @@ function App() {
         <div className="content">
           <nav>
             <ul>
-              <li><TiHomeOutline color="#000" />Home</li>
-              <li><IoIosNotificationsOutline color="#000" />Notifications</li>
-              <li><AiOutlineMail color="#000" />Messages</li>
+              <li><img src={require("./assets/home.svg")} alt="Home" />Home</li>
+              <li><img src={require("./assets/notification.svg")} alt="Home" />Notifications</li>
+              <li><img src={require("./assets/message.svg")} alt="Home" />Messages</li>
             </ul>
           </nav>
-          <FaTwitter color="#3bb9e3"></FaTwitter>
+          <img src={require("./assets/logo.svg")} alt="Home" />
+
           <div className="side">
             <i class="fa fa-youtube icon"></i>
             <input type="text" placeholder="Search on Twitter" />
