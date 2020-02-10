@@ -1,27 +1,104 @@
+.content {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+header#main-header {
+  height: 46px;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+header#main-header .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+header#main-header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+header#main-header nav ul li {
+  display: flex;
+  align-items: center;
+
+  font-size: 13px;
+  color: #667588;
+  font-weight: bold;
+
+  margin-left: 18px;
+}
+
+header#main-header div.side input {
+  background: #f5f8fa;
+  border: 1px solid #e6ecf0;
+  height: 34px;
+  padding: 0 30px 0 8px;
+  border-radius: 16px;
+  color: #667581;
+  font-size: 12px;
+  background: #f5f8fa url("assets/icons8-pesquisar.svg") no-repeat right;
+}
+
+header#main-header nav ul li:first-child {
+  margin: 0px;
+}
+
+header#main-header nav ul li svg {
+  margin-right: 5px;
+}
+
+header#main-header div.side img {
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+}
+
+header#main-header div.side svg {
+  margin: 0 15px;
+}
+
+header#main-header div.side {
+  display: flex;
+  align-items: center;
+}
+
+header#main-header div.side button {
+  height: 34px;
+  background: #3bb9e3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 90px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+}
+
 * {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
 }
 
+input,
+button {
+  outline: 0;
+}
 body {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  -webkit-font-smoothing: antialiased;
+  padding: 0 2px;
+  -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale;
-}
 
-#app {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-.box {
-  width: 60px;
-  height: 60px;
-  background-color: #f00;
-  margin: 5px;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  text-rendering: optimizeSpeed !important;
+  background: #e6ecf0;
 }

@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  text-rendering: optimizeSpeed !important;
+}
+
+#app {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  background-color: #f00;
+  margin: 5px;
+}
