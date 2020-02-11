@@ -1,9 +1,5 @@
 import React from 'react';
 import './App.css';
-import { FaUserCircle, FaTwitter } from 'react-icons/fa'
-import { IoIosNotificationsOutline, IoIosPerson } from 'react-icons/io'
-import { TiHomeOutline } from 'react-icons/ti'
-import { AiOutlineMail } from 'react-icons/ai'
 
 function App() {
   return (
@@ -27,7 +23,8 @@ function App() {
         </div>
       </header>
       <div className="banner">
-        <h1>Twitter da Rocketseat</h1>
+        <img className="img-banner" src={require("./assets/keepcode.png")} alt="Diego Fernandes" />
+        {/*<h1>Twitter da Rocketseat</h1>*/}
       </div>
       <div className="bar">
         <div className="content">
@@ -70,12 +67,48 @@ function App() {
             <li><img src={require("./assets/joined.svg")} alt="Joined" />Joined June 2007</li>
             <li><img src={require("./assets/born.svg")} alt="Born" />Born the 20th of June 1978</li>
           </ul>
+
+          <div className="widget followers">
+            <strong><img src={require("./assets/followers.svg")} alt="Followers" /> 73 followers that you know</strong>
+            <ul>
+              <li><img className="followperson" src={require("./assets/rocketseat.png")} alt="Diego Fernandes" /></li>
+              <li><img className="followperson" src={require("./assets/boneca.png")} alt="Diego Fernandes" /></li>
+              <li><img className="followperson" src={require("./assets/wolf.png")} alt="Diego Fernandes" /></li>
+              <li><img className="followperson" src={require("./assets/bobesponja.png")} alt="Diego Fernandes" /></li>
+              <li><img className="followperson" src={require("./assets/pikachu.png")} alt="Diego Fernandes" /></li>
+              <li><img className="followperson" src={require("./assets/dog.png")} alt="Diego Fernandes" /></li>
+              <li><img className="followperson" src={require("./assets/earth.png")} alt="Diego Fernandes" /></li>
+              <li><img className="followperson" src={require("./assets/airbnb.png")} alt="Diego Fernandes" /></li>
+              <li><img className="followperson" src={require("./assets/kakashi.png")} alt="Diego Fernandes" /></li>
+              <li><img className="followperson" src={require("./assets/med.png")} alt="Diego Fernandes" /></li>
+            </ul>
+          </div>
+
+          <div className="widget images">
+            <strong><img src={require("./assets/images.svg")} alt="Images" /> 266 Photos and videos</strong>
+
+            <ul>
+              <li><img className="followimages" src={require("./assets/anonnymous.png")} alt="Diego Fernandes" /></li>
+              <li><img className="followimages" src={require("./assets/bart.png")} alt="Diego Fernandes" /></li>
+              <li><img className="followimages" src={require("./assets/woman.png")} alt="Diego Fernandes" /></li>
+              <li><img className="followimages" src={require("./assets/boy.png")} alt="Diego Fernandes" /></li>
+              <li><img className="followimages" src={require("./assets/langeri.png")} alt="Diego Fernandes" /></li>
+              <li><img className="followimages" src={require("./assets/leon.png")} alt="Diego Fernandes" /></li>
+            </ul>
+          </div>
         </aside>
         <section className="timeline">
           timeline
         </section>
         <aside className="widgets">
-          widgets
+          <div className="widget follow">
+            <div className="title">
+              <strong>Who to follow</strong>
+              <a href="https://twitter.com">Refresh</a>
+              <a href="https://twitter.com">View All</a>
+            </div>
+          </div>
+          <div className="widget trends"></div>
         </aside>
       </div>
     </body >
