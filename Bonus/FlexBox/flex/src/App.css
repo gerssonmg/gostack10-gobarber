@@ -8,6 +8,8 @@ header#main-header {
   height: 46px;
   background: #fff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1;
 }
 
 header#main-header .content {
@@ -30,41 +32,37 @@ header#main-header nav ul li {
   color: #667588;
   font-weight: bold;
 
-  margin-left: 18px;
+  margin-left: 30px;
 }
 
 header#main-header div.side input {
-  background: #f5f8fa;
+  width: 220px;
   border: 1px solid #e6ecf0;
   height: 34px;
-  padding: 0 30px 0 8px;
+  padding: 0 30px 0 12px;
   border-radius: 16px;
   color: #667581;
   font-size: 12px;
-  background: #f5f8fa url("assets/icons8-pesquisar.svg") no-repeat right;
+  background: #f5f8fa url("/assets/search.svg") no-repeat 190px center;
 }
 
 header#main-header nav ul li:first-child {
-  margin: 0px;
+  margin: 0;
 }
 
 header#main-header nav ul li img {
-  margin-right: 5px;
+  margin-right: 7px;
 }
 
 header#main-header div.side img {
   height: 34px;
   width: 34px;
   border-radius: 50%;
-}
-
-header#main-header div.side svg {
   margin: 0 15px;
 }
 
 header#main-header div.side {
   display: flex;
-  align-items: center;
 }
 
 header#main-header div.side button {
@@ -83,6 +81,77 @@ header#main-header div.side button {
   border-radius: 8px;
 }
 
+div.banner {
+  height: 380px;
+  width: 100%;
+  background: #3bb9e3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+}
+
+div.bar {
+  height: 59px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+div.bar .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 270px;
+  height: 100%;
+}
+
+div.bar .content ul {
+  display: flex;
+  list-style: none;
+}
+
+div.bar .content ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 15px;
+}
+
+div.bar .content ul li span {
+  color: #667580;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+div.bar .content ul li strong {
+  color: #667580;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+div.bar .content ul li.active::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #3bb9e3;
+}
+
+div.bar .content ul li.active::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #3bb9e3;
+}
+
 * {
   margin: 0 auto;
   padding: 0;
@@ -94,7 +163,7 @@ button {
   outline: 0;
 }
 body {
-  padding: 0 2px;
+  padding: 0 0px;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale;
 

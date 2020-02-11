@@ -20,13 +20,42 @@ function App() {
           <img src={require("./assets/logo.svg")} alt="Home" />
 
           <div className="side">
-            <i class="fa fa-youtube icon"></i>
-            <input type="text" placeholder="Search on Twitter" />
-            <IoIosPerson />
+            <input type="text" placeholder="Search on Twitter" background={require("./assets/avatar.png")} />
+            <img src={require("./assets/avatar.png")} alt="Avatar" />
             <button>Tweet</button>
           </div>
         </div>
       </header>
+      <div className="banner">
+        <h1>Twitter Rocketseat</h1>
+      </div>
+      <div className="bar">
+        <div className="content">
+          <ul>
+            <li>
+              <span>Tweets</span>
+              <strong>1234</strong>
+            </li>
+            <li>
+              <span>Followings</span>
+              <strong>645</strong>
+            </li>
+            <li>
+              <span>Followers</span>
+              <strong>84</strong>
+            </li>
+            <li>
+              <span>Favorites</span>
+              <strong>98</strong>
+            </li>
+          </ul>
+          <div className="actions">
+            <button>Follow</button>
+            <img src={require("./assets/more.svg")} alt="More" />
+          </div>
+        </div>
+        <div />
+      </div>
     </body >
   );
 }
