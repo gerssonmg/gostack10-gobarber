@@ -107,8 +107,168 @@ function App() {
               <a href="https://twitter.com">Refresh</a>
               <a href="https://twitter.com">View All</a>
             </div>
+
+            <ul>
+              <li>
+                <div className="profile">
+                  <img src={require("./assets/avatar.png")} alt="Place" />
+                  <div className="info">
+                    <strong>Spade <span>@spade_be</span></strong>
+                    <button>Follow</button>
+                  </div>
+                </div>
+                <a href="">X</a>
+              </li>
+
+              <li>
+                <div className="profile">
+                  <img src={require("./assets/avatar.png")} alt="Place" />
+                  <div className="info">
+                    <strong>Spade <span>@spade_be</span></strong>
+                    <button>Follow</button>
+                  </div>
+                </div>
+                <a href="">X</a>
+              </li>
+
+              <li>
+                <div className="profile">
+                  <img src={require("./assets/avatar.png")} alt="Place" />
+                  <div className="info">
+                    <strong>Spade <span>@spade_be</span></strong>
+                    <button>Follow</button>
+                  </div>
+                </div>
+                <a href="">X</a>
+              </li>
+
+
+              <li>
+                <div className="profile">
+                  <img src={require("./assets/avatar.png")} alt="Place" />
+                  <div className="info">
+                    <strong>Spade <span>@spade_be</span></strong>
+                    <button>Follow</button>
+                  </div>
+                </div>
+                <a href="">X</a>
+              </li>
+
+            </ul>
           </div>
-          <div className="widget trends"></div>
+
+          <div className="widget follow">
+            <div className="title">
+              <strong>Here in following</strong>
+              <a href="https://twitter.com">Who</a>
+              <a href="https://twitter.com">When</a>
+            </div>
+
+            <ul>
+              <li>
+                <div className="profile">
+                  <img src={require("./assets/avatar.png")} alt="Place" />
+                  <div className="info">
+                    <strong>Spade <span>@spade_be</span></strong>
+                    <button>Follow</button>
+                  </div>
+                </div>
+                <a href="">X</a>
+              </li>
+
+              <li>
+                <div className="profile">
+                  <img src={require("./assets/avatar.png")} alt="Place" />
+                  <div className="info">
+                    <strong>Spade <span>@spade_be</span></strong>
+                    <button>Follow</button>
+                  </div>
+                </div>
+                <a href="">X</a>
+              </li>
+
+              <li>
+                <div className="profile">
+                  <img src={require("./assets/avatar.png")} alt="Place" />
+                  <div className="info">
+                    <strong>Spade <span>@spade_be</span></strong>
+                    <button>Follow</button>
+                  </div>
+                </div>
+                <a href="">X</a>
+              </li>
+
+
+              <li>
+                <div className="profile">
+                  <img src={require("./assets/avatar.png")} alt="Place" />
+                  <div className="info">
+                    <strong>Spade <span>@spade_be</span></strong>
+                    <button>Follow</button>
+                  </div>
+                </div>
+                <a href="">X</a>
+              </li>
+
+            </ul>
+          </div>
+
+          <div className="widget follow">
+            <div className="title">
+              <strong>Your to stars</strong>
+              <a href="https://twitter.com">Before</a>
+              <a href="https://twitter.com">Above</a>
+            </div>
+
+            <ul>
+              <li>
+                <div className="profile">
+                  <img src={require("./assets/avatar.png")} alt="Place" />
+                  <div className="info">
+                    <strong>Spade <span>@spade_be</span></strong>
+                    <button>Follow</button>
+                  </div>
+                </div>
+                <a href="">X</a>
+              </li>
+
+              <li>
+                <div className="profile">
+                  <img src={require("./assets/avatar.png")} alt="Place" />
+                  <div className="info">
+                    <strong>Spade <span>@spade_be</span></strong>
+                    <button>Follow</button>
+                  </div>
+                </div>
+                <a href="">X</a>
+              </li>
+
+              <li>
+                <div className="profile">
+                  <img src={require("./assets/avatar.png")} alt="Place" />
+                  <div className="info">
+                    <strong>Spade <span>@spade_be</span></strong>
+                    <button>Follow</button>
+                  </div>
+                </div>
+                <a href="">X</a>
+              </li>
+
+
+              <li>
+                <div className="profile">
+                  <img src={require("./assets/avatar.png")} alt="Place" />
+                  <div className="info">
+                    <strong>Spade <span>@spade_be</span></strong>
+                    <button>Follow</button>
+                  </div>
+                </div>
+                <a href="">X</a>
+              </li>
+
+            </ul>
+          </div>
+
         </aside>
       </div>
     </body >
