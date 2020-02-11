@@ -27,14 +27,14 @@ function App() {
         </div>
       </header>
       <div className="banner">
-        <h1>Twitter Rocketseat</h1>
+        <h1>Twitter da Rocketseat</h1>
       </div>
       <div className="bar">
         <div className="content">
           <ul>
-            <li>
+            <li className="active">
               <span>Tweets</span>
-              <strong>1234</strong>
+              <strong className="active">1234</strong>
             </li>
             <li>
               <span>Followings</span>
@@ -55,6 +55,28 @@ function App() {
           </div>
         </div>
         <div />
+      </div>
+      <div className="wrapper-content content">
+        <aside className="profile">
+          <img className="avatar" src={require("./assets/avatar.png")} alt="Diego Fernandes" />
+          <h1>Diego Fernandes</h1>
+          <span>@Exibit</span>
+          <p>Web, Design & Rock 'n roll Partner/UI Designer
+            @spade_be Musican in @dashboxmusic
+          </p>
+          <ul className="list">
+            <li><img src={require("./assets/place.svg")} alt="Place" />Namur, Belgium</li>
+            <li><img src={require("./assets/url.svg")} alt="URL" />exibit.be</li>
+            <li><img src={require("./assets/joined.svg")} alt="Joined" />Joined June 2007</li>
+            <li><img src={require("./assets/born.svg")} alt="Born" />Born the 20th of June 1978</li>
+          </ul>
+        </aside>
+        <section className="timeline">
+          timeline
+        </section>
+        <aside className="widgets">
+          widgets
+        </aside>
       </div>
     </body >
   );
