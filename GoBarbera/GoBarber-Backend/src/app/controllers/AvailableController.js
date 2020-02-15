@@ -11,6 +11,11 @@ import { Op } from 'sequelize';
 import Appointment from '../models/Appointment';
 
 class AvailableController {
+  /**
+   *
+   * @param {*} req
+   * @param {*} res
+   */
   async index(req, res) {
     const { date } = req.query;
     if (!date) {

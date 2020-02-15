@@ -2,6 +2,10 @@ import Sequelize, { Model } from 'sequelize';
 import bcrypt from 'bcryptjs';
 
 class User extends Model {
+  /**
+   *
+   * @param {*} sequelize
+   */
   static init(sequelize) {
     super.init(
       {
@@ -24,10 +28,18 @@ class User extends Model {
     return this;
   }
 
+  /**
+   *
+   * @param {*} models
+   */
   static associate(models) {
     this.belongsTo(models.File, { foreignKey: 'avatar_id', as: 'avatar' });
   }
 
+  /**
+   *
+   * @param {*} password
+   */
   checkPassword(password) {
     return bcrypt.compare(password, this.password_hash);
   }

@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 import pt from 'date-fns/locale/pt';
-import { startOfHour, parseISO, isBefore, format, subHours } from 'date-fns';
+import { startOfHour, parseISO, isBefore, format } from 'date-fns';
 import Appointment from '../models/Appointment';
 import User from '../models/User';
 import File from '../models/File';
@@ -10,6 +10,11 @@ import Queue from '../../lib/Queue';
 import CancellationMail from '../jobs/CancellationMail';
 
 class AppointmentController {
+  /**
+   *
+   * @param {*} req
+   * @param {*} res
+   */
   async index(req, res) {
     const { page = 1 } = req.query;
 
@@ -37,6 +42,11 @@ class AppointmentController {
     return res.json(appointments);
   }
 
+  /**
+   *
+   * @param {*} req
+   * @param {*} res
+   */
   async store(req, res) {
     const schema = Yup.object().shape({
       provider_id: Yup.number().required(),
@@ -116,6 +126,11 @@ class AppointmentController {
     return res.json(appointment);
   }
 
+  /**
+   *
+   * @param {*} req
+   * @param {*} res
+   */
   async delete(req, res) {
     const appointment = await Appointment.findByPk(req.params.id, {
       include: [

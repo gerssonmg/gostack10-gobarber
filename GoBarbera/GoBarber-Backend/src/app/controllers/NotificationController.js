@@ -2,6 +2,11 @@ import Notification from '../schemas/Notification';
 import User from '../models/User';
 
 class NotificaionController {
+  /**
+   *
+   * @param {*} req
+   * @param {*} res
+   */
   async index(req, res) {
     const checkUserProvier = await User.findOne({
       where: {
@@ -23,6 +28,11 @@ class NotificaionController {
     return res.json(notifications);
   }
 
+  /**
+   *
+   * @param {*} req
+   * @param {*} res
+   */
   async update(req, res) {
     const notification = await Notification.findByIdAndUpdate(
       req.params.id,

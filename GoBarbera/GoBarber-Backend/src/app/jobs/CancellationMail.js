@@ -3,10 +3,17 @@ import { format, parseISO } from 'date-fns';
 import Mail from '../../lib/Mail';
 
 class CancellationMail {
+  /**
+   *
+   */
   get key() {
     return 'CancellationMail';
   }
 
+  /**
+   *
+   * @param {*} param0
+   */
   async handle({ data }) {
     const { appointment } = data;
 

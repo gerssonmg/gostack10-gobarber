@@ -1,6 +1,10 @@
 import Sequelize, { Model } from 'sequelize';
 
 class File extends Model {
+  /**
+   *
+   * @param {*} sequelize
+   */
   static init(sequelize) {
     super.init(
       {

@@ -4,6 +4,11 @@ import Appointment from '../models/Appointment';
 import User from '../models/User';
 
 class ScheduleController {
+  /**
+   *
+   * @param {*} req
+   * @param {*} res
+   */
   async index(req, res) {
     const checkUserProvier = await User.findOne({
       where: {

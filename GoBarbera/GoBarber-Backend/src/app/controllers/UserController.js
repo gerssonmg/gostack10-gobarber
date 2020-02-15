@@ -2,6 +2,11 @@ import * as Yup from 'yup';
 import User from '../models/User';
 
 class UserController {
+  /**
+   *
+   * @param {*} req
+   * @param {*} res
+   */
   async store(req, res) {
     const schema = Yup.object().shape({
       name: Yup.string().required(),
@@ -35,6 +40,11 @@ class UserController {
     });
   }
 
+  /**
+   *
+   * @param {*} req
+   * @param {*} res
+   */
   async update(req, res) {
     const { email, oldPassword } = req.body;
     const user = await User.findByPk(req.userId);

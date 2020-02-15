@@ -2,6 +2,9 @@ import User from '../models/User';
 import File from '../models/File';
 
 class ProviderController {
+  /**
+   *
+   */
   async index(req, res) {
     const providers = await User.findAll({
       where: { provider: true },
