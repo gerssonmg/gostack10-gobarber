@@ -1,7 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import axios from './services/api';
 
 function App() {
+
+  const [listTimeline, setListtimeline] = useState([]);
+  const [listText, setText] = useState({
+    avatar: './assets/avatar.png',
+    commets: 1,
+    retweet: 2,
+    like: 3,
+    strong: 'Benoît Vrins ',
+    span: '@Exibit',
+    p: 'app @itsmeDigitalID désinstallée puis réinstallée, comment faire pour retrouver son compte ? Ma banque dit que mon token existe déjà #UX',
+  },
+  );
+
+  const url = 'https://github.com/gerssonmg';
+  useEffect(() => {
+    async function loadAvatar() {
+      const response = await axios.get('');
+      console.log(response.data);
+      setListtimeline(response.data)
+    }
+    loadAvatar();
+  }, []);
+
   return (
     <body>
       <header id="main-header">
@@ -98,7 +122,168 @@ function App() {
           </div>
         </aside>
         <section className="timeline">
-          timeline
+          <nav>
+            <a href={url} className="active">Tweets</a>
+            <a href={url}>Tweets replices</a>
+            <a href={url}>Medias</a>
+          </nav>
+
+          <ul className="tweets">
+            {
+              listTimeline.map(post =>
+                (
+                  <li key={Math.random()}>
+                    <img src={`${post.avatar_url}`} alt="Avatar" />
+                    <div className="info">
+                      <strong>{post.login}  <span>{listText.span}</span></strong>
+                      <p>{listText.p}</p>
+                      <div className="actions">
+                        <a href={url}><img src={require("./assets/comments.svg")} alt="Comments" />{Math.floor(Math.random() * 10)}</a>
+                        <a href={url}><img src={require("./assets/retweet.svg")} alt="Retweet" />{Math.floor(Math.random() * 10)}</a>
+                        <a href={url}><img src={require("./assets/like.svg")} alt="Like" />{Math.floor(Math.random() * 10)}</a>
+                      </div>
+                    </div>
+                  </li>
+                )
+              )
+
+            }
+            {/*
+            <li>
+              <img src={require("./assets/avatar.png")} alt="Avatar" />
+              <div class="info">
+                <strong>Benoît Vrins <span>@Exibit</span></strong>
+                <p>app @itsmeDigitalID désinstallée puis réinstallée, comment faire pour retrouver son compte ? Ma banque dit que mon token existe déjà #UX</p>
+                <div class="actions">
+                  <a href={url}><img src={require("./assets/comments.svg")} alt="Comments" /> 3</a>
+                  <a href={url}><img src={require("./assets/retweet.svg")} alt="Retweet" /> 4</a>
+                  <a href={url}><img src={require("./assets/like.svg")} alt="Like" /> 5</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <img src={require("./assets/avatar.png")} alt="Avatar" />
+              <div class="info">
+                <strong>Benoît Vrins <span>@Exibit</span></strong>
+                <p>app @itsmeDigitalID désinstallée puis réinstallée, comment faire pour retrouver son compte ? Ma banque dit que mon token existe déjà #UX</p>
+                <div class="actions">
+                  <a href={url}><img src={require("./assets/comments.svg")} alt="Comments" /> 3</a>
+                  <a href={url}><img src={require("./assets/retweet.svg")} alt="Retweet" /> 4</a>
+                  <a href={url}><img src={require("./assets/like.svg")} alt="Like" /> 5</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <img src={require("./assets/avatar.png")} alt="Avatar" />
+              <div class="info">
+                <strong>Benoît Vrins <span>@Exibit</span></strong>
+                <p>app @itsmeDigitalID désinstallée puis réinstallée, comment faire pour retrouver son compte ? Ma banque dit que mon token existe déjà #UX</p>
+                <div class="actions">
+                  <a href={url}><img src={require("./assets/comments.svg")} alt="Comments" /> 3</a>
+                  <a href={url}><img src={require("./assets/retweet.svg")} alt="Retweet" /> 4</a>
+                  <a href={url}><img src={require("./assets/like.svg")} alt="Like" /> 5</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <img src={require("./assets/avatar.png")} alt="Avatar" />
+              <div class="info">
+                <strong>Benoît Vrins <span>@Exibit</span></strong>
+                <p>app @itsmeDigitalID désinstallée puis réinstallée, comment faire pour retrouver son compte ? Ma banque dit que mon token existe déjà #UX</p>
+                <div class="actions">
+                  <a href={url}><img src={require("./assets/comments.svg")} alt="Comments" /> 3</a>
+                  <a href={url}><img src={require("./assets/retweet.svg")} alt="Retweet" /> 4</a>
+                  <a href={url}><img src={require("./assets/like.svg")} alt="Like" /> 5</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <img src={require("./assets/avatar.png")} alt="Avatar" />
+              <div class="info">
+                <strong>Benoît Vrins <span>@Exibit</span></strong>
+                <p>app @itsmeDigitalID désinstallée puis réinstallée, comment faire pour retrouver son compte ? Ma banque dit que mon token existe déjà #UX</p>
+                <div class="actions">
+                  <a href={url}><img src={require("./assets/comments.svg")} alt="Comments" /> 3</a>
+                  <a href={url}><img src={require("./assets/retweet.svg")} alt="Retweet" /> 4</a>
+                  <a href={url}><img src={require("./assets/like.svg")} alt="Like" /> 5</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <img src={require("./assets/avatar.png")} alt="Avatar" />
+              <div class="info">
+                <strong>Benoît Vrins <span>@Exibit</span></strong>
+                <p>app @itsmeDigitalID désinstallée puis réinstallée, comment faire pour retrouver son compte ? Ma banque dit que mon token existe déjà #UX</p>
+                <div class="actions">
+                  <a href={url}><img src={require("./assets/comments.svg")} alt="Comments" /> 3</a>
+                  <a href={url}><img src={require("./assets/retweet.svg")} alt="Retweet" /> 4</a>
+                  <a href={url}><img src={require("./assets/like.svg")} alt="Like" /> 5</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <img src={require("./assets/avatar.png")} alt="Avatar" />
+              <div class="info">
+                <strong>Benoît Vrins <span>@Exibit</span></strong>
+                <p>app @itsmeDigitalID désinstallée puis réinstallée, comment faire pour retrouver son compte ? Ma banque dit que mon token existe déjà #UX</p>
+                <div class="actions">
+                  <a href={url}><img src={require("./assets/comments.svg")} alt="Comments" /> 3</a>
+                  <a href={url}><img src={require("./assets/retweet.svg")} alt="Retweet" /> 4</a>
+                  <a href={url}><img src={require("./assets/like.svg")} alt="Like" /> 5</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <img src={require("./assets/avatar.png")} alt="Avatar" />
+              <div class="info">
+                <strong>Benoît Vrins <span>@Exibit</span></strong>
+                <p>app @itsmeDigitalID désinstallée puis réinstallée, comment faire pour retrouver son compte ? Ma banque dit que mon token existe déjà #UX</p>
+                <div class="actions">
+                  <a href={url}><img src={require("./assets/comments.svg")} alt="Comments" /> 3</a>
+                  <a href={url}><img src={require("./assets/retweet.svg")} alt="Retweet" /> 4</a>
+                  <a href={url}><img src={require("./assets/like.svg")} alt="Like" /> 5</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <img src={require("./assets/avatar.png")} alt="Avatar" />
+              <div class="info">
+                <strong>Benoît Vrins <span>@Exibit</span></strong>
+                <p>app @itsmeDigitalID désinstallée puis réinstallée, comment faire pour retrouver son compte ? Ma banque dit que mon token existe déjà #UX</p>
+                <div class="actions">
+                  <a href={url}><img src={require("./assets/comments.svg")} alt="Comments" /> 3</a>
+                  <a href={url}><img src={require("./assets/retweet.svg")} alt="Retweet" /> 4</a>
+                  <a href={url}><img src={require("./assets/like.svg")} alt="Like" /> 5</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <img src={require("./assets/avatar.png")} alt="Avatar" />
+              <div class="info">
+                <strong>Benoît Vrins <span>@Exibit</span></strong>
+                <p>app @itsmeDigitalID désinstallée puis réinstallée, comment faire pour retrouver son compte ? Ma banque dit que mon token existe déjà #UX</p>
+                <div class="actions">
+                  <a href={url}><img src={require("./assets/comments.svg")} alt="Comments" /> 3</a>
+                  <a href={url}><img src={require("./assets/retweet.svg")} alt="Retweet" /> 4</a>
+                  <a href={url}><img src={require("./assets/like.svg")} alt="Like" /> 5</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <img src={require("./assets/avatar.png")} alt="Avatar" />
+              <div class="info">
+                <strong>Benoît Vrins <span>@Exibit</span></strong>
+                <p>app @itsmeDigitalID désinstallée puis réinstallée, comment faire pour retrouver son compte ? Ma banque dit que mon token existe déjà #UX</p>
+                <div class="actions">
+                  <a href={url}><img src={require("./assets/comments.svg")} alt="Comments" /> 3</a>
+                  <a href={url}><img src={require("./assets/retweet.svg")} alt="Retweet" /> 4</a>
+                  <a href={url}><img src={require("./assets/like.svg")} alt="Like" /> 5</a>
+                </div>
+              </div>
+            </li>
+            */
+            }
+          </ul>
         </section>
         <aside className="widgets">
           <div className="widget follow">
@@ -107,168 +292,81 @@ function App() {
               <a href="https://twitter.com">Refresh</a>
               <a href="https://twitter.com">View All</a>
             </div>
-
             <ul>
               <li>
                 <div className="profile">
-                  <img src={require("./assets/avatar.png")} alt="Place" />
+                  <img src={require("./assets/j.png")} alt="Place" />
                   <div className="info">
-                    <strong>Spade <span>@spade_be</span></strong>
+                    <strong>Jhon <span>@spade_be</span></strong>
                     <button>Follow</button>
                   </div>
                 </div>
-                <a href="">X</a>
+                <a href={url}>X</a>
               </li>
 
               <li>
                 <div className="profile">
-                  <img src={require("./assets/avatar.png")} alt="Place" />
+                  <img src={require("./assets/jhon.png")} alt="Place" />
                   <div className="info">
-                    <strong>Spade <span>@spade_be</span></strong>
+                    <strong>Jhon <span>@spade_be</span></strong>
                     <button>Follow</button>
                   </div>
                 </div>
-                <a href="">X</a>
+                <a href={url}>X</a>
               </li>
 
               <li>
                 <div className="profile">
-                  <img src={require("./assets/avatar.png")} alt="Place" />
+                  <img src={require("./assets/julia.png")} alt="Place" />
                   <div className="info">
-                    <strong>Spade <span>@spade_be</span></strong>
+                    <strong>Julia <span>@spade_be</span></strong>
                     <button>Follow</button>
                   </div>
                 </div>
-                <a href="">X</a>
+                <a href={url}>X</a>
               </li>
 
 
               <li>
                 <div className="profile">
-                  <img src={require("./assets/avatar.png")} alt="Place" />
+                  <img src={require("./assets/maria.png")} alt="Place" />
                   <div className="info">
-                    <strong>Spade <span>@spade_be</span></strong>
+                    <strong>Maria <span>@spade_be</span></strong>
                     <button>Follow</button>
                   </div>
                 </div>
-                <a href="">X</a>
+                <a href={url}>X</a>
               </li>
 
             </ul>
           </div>
-
-          <div className="widget follow">
-            <div className="title">
-              <strong>Here in following</strong>
-              <a href="https://twitter.com">Who</a>
-              <a href="https://twitter.com">When</a>
-            </div>
-
-            <ul>
-              <li>
-                <div className="profile">
-                  <img src={require("./assets/avatar.png")} alt="Place" />
-                  <div className="info">
-                    <strong>Spade <span>@spade_be</span></strong>
-                    <button>Follow</button>
-                  </div>
-                </div>
-                <a href="">X</a>
-              </li>
-
-              <li>
-                <div className="profile">
-                  <img src={require("./assets/avatar.png")} alt="Place" />
-                  <div className="info">
-                    <strong>Spade <span>@spade_be</span></strong>
-                    <button>Follow</button>
-                  </div>
-                </div>
-                <a href="">X</a>
-              </li>
-
-              <li>
-                <div className="profile">
-                  <img src={require("./assets/avatar.png")} alt="Place" />
-                  <div className="info">
-                    <strong>Spade <span>@spade_be</span></strong>
-                    <button>Follow</button>
-                  </div>
-                </div>
-                <a href="">X</a>
-              </li>
-
-
-              <li>
-                <div className="profile">
-                  <img src={require("./assets/avatar.png")} alt="Place" />
-                  <div className="info">
-                    <strong>Spade <span>@spade_be</span></strong>
-                    <button>Follow</button>
-                  </div>
-                </div>
-                <a href="">X</a>
-              </li>
-
-            </ul>
-          </div>
-
           <div className="widget follow">
             <div className="title">
               <strong>Your to stars</strong>
               <a href="https://twitter.com">Before</a>
               <a href="https://twitter.com">Above</a>
             </div>
-
             <ul>
               <li>
                 <div className="profile">
-                  <img src={require("./assets/avatar.png")} alt="Place" />
+                  <img src={require("./assets/diego.png")} alt="Place" />
                   <div className="info">
-                    <strong>Spade <span>@spade_be</span></strong>
+                    <strong>Diego F <span>@spade_be</span></strong>
                     <button>Follow</button>
                   </div>
                 </div>
-                <a href="">X</a>
               </li>
-
               <li>
                 <div className="profile">
-                  <img src={require("./assets/avatar.png")} alt="Place" />
+                  <img src={require("./assets/m.png")} alt="Place" />
                   <div className="info">
-                    <strong>Spade <span>@spade_be</span></strong>
+                    <strong>Donald <span>@spade_be</span></strong>
                     <button>Follow</button>
                   </div>
                 </div>
-                <a href="">X</a>
               </li>
-
-              <li>
-                <div className="profile">
-                  <img src={require("./assets/avatar.png")} alt="Place" />
-                  <div className="info">
-                    <strong>Spade <span>@spade_be</span></strong>
-                    <button>Follow</button>
-                  </div>
-                </div>
-                <a href="">X</a>
-              </li>
-
-
-              <li>
-                <div className="profile">
-                  <img src={require("./assets/avatar.png")} alt="Place" />
-                  <div className="info">
-                    <strong>Spade <span>@spade_be</span></strong>
-                    <button>Follow</button>
-                  </div>
-                </div>
-                <a href="">X</a>
-              </li>
-
             </ul>
           </div>
-
         </aside>
       </div>
     </body >
