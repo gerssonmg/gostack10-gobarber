@@ -8,6 +8,7 @@ import { formatPrice } from '../../../util/format';
 import { addToCartSuccess, updateAmountSuccess } from './actions';
 
 function* addToCart({ id }) {
+  console.tron.log('addToCart');
   const productExists = yield select(state =>
     state.cart.find(p => p.id === id)
   );
@@ -41,7 +42,9 @@ function* addToCart({ id }) {
 }
 
 function* updateAmount({ id, amount }) {
+  console.tron.log('update');
   if (amount <= 0) return;
+  console.tron.log('update01');
 
   // const product = yield select(state => state.cart.find(p => p.id === id));
 
@@ -49,9 +52,13 @@ function* updateAmount({ id, amount }) {
 
   const stockAmount = stock.data.amount;
 
+  console.tron.log('update02');
   if (amount > stockAmount) {
     toast.error('Quantidade solicitade fore de estoque');
+    console.tron.log('update03');
   }
+
+  yield put(updateAmountSuccess(id, amount));
 }
 export default all([
   takeLatest('@cart/ADD_REQUEST', addToCart),
