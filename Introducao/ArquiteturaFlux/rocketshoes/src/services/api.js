@@ -7,3 +7,4 @@ const api = axios.create({
 export default api;
 
 // json-server server.json -p 3333
+// json-server server.json -p 3333 -d 2000
