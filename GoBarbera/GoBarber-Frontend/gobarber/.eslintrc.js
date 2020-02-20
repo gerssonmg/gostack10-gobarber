@@ -45,13 +45,15 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "no-undef": "off",
-    "react/jsx-no-undef": "off"
+    "react/jsx-no-undef": "off",
+
+    "react/jsx-props-no-spreading": "off"
   },
-  /*settings: {
+  settings: {
     "import/resolver": {
       "babel-plugin-root-import": {
         rootPathSuffix: "src"
       },
     },
-  },*/
+  },
 };
