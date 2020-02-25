@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
 export const Container = styled.div`
   max-width: 600px;
   margin: 50px auto;
-
+  min-height: 100px;
   display: flex;
   flex-direction: column;
 
@@ -51,4 +52,9 @@ export const Time = styled.li`
     margin-top: 3px;
     color: ${props => (props.available ? '#999' : '#666')};
   }
+`;
+
+export const Scroll = styled(PerfectScrollbar)`
+  max-height: 460px;
+  padding: 5px 15px;
 `;
