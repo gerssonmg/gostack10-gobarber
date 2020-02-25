@@ -13,15 +13,15 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  *:focus{
+  *:focus {
     outline: 0;
   }
 
   html, body, #root {
-    height:100%;
+    height: 100%;
   }
 
-  body{
+  body {
     -webkit-font-smoothing: antialiased;
   }
 
@@ -40,5 +40,4 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
-
 `;
